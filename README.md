@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+課題用のrailsテンプレートです。
 
-Things you may want to cover:
+## 前提
 
-* Ruby version
+- dockerが必要です。
 
-* System dependencies
+## setup
 
-* Configuration
+```
+docker compose build
+```
 
-* Database creation
+```
+docker compose run --rm web bin/setup
+```
 
-* Database initialization
 
-* How to run the test suite
+```
+docker compose run --rm yarn install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## run
 
-* Deployment instructions
+```
+docker compose up
+```
 
-* ...
+http://localhost:3000
