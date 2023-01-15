@@ -25,6 +25,7 @@ services:
       - .:/myapp
       - bundle:/usr/local/bundle
       - node_modules:/myapp/node_modules
+    tty: true
   css:
     image: rails_template:latest
     command: yarn build:css --watch
@@ -32,6 +33,7 @@ services:
       - .:/myapp
       - bundle:/usr/local/bundle
       - node_modules:/myapp/node_modules
+    tty: true
 volumes:
   db:
   bundle:
