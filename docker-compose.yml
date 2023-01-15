@@ -4,6 +4,8 @@ services:
     image: postgres
     volumes:
       - db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
   web:
     build: .
     image: rails_template:latest
