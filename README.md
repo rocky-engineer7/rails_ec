@@ -18,7 +18,7 @@ docker compose run --rm web bin/setup
 
 
 ```
-docker compose run --rm yarn install
+docker compose run --rm web yarn install
 ```
 
 ## run
