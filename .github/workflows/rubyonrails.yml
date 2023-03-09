@@ -40,6 +40,7 @@ jobs:
         run: bin/rails css:build
       - name: build javascript
         run: bin/rails javascript:build
-      # Add or replace test runners here
+      - name: Run rubocop
+        run: bundle exec rubocop
       - name: Run tests
         run: bundle exec rspec
