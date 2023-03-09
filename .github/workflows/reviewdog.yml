@@ -17,7 +17,7 @@ jobs:
           mv reviewdog $HOME/bin/
           echo "$HOME/bin/" >> $GITHUB_PATH
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v1.143.0
         with:
           bundler-cache: true
       - name: Run rubocop with reviewdog
