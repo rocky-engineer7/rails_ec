@@ -1,5 +1,0 @@
-runner:
-  rubocop:
-    cmd: bundle exec rubocop
-    format: rubocop
-    level: error
