@@ -1,8 +1,12 @@
 name: danger
 on: [pull_request]
 permissions:
-  contents: read
+  actions: write
+  checks: write
+  contents: write
+  issues: write
   pull-requests: write
+  statuses: write
 jobs:
   danger:
     runs-on: ubuntu-latest
