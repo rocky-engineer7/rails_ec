@@ -28,17 +28,13 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: reviewdog --conf=./.reviewdog.yml -reporter=github-pr-check
-
-  rails_best_practices:
-    name: runner / rails_best_practices
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: blooper05/action-rails_best_practices@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          # Change reviewdog reporter if you need [github-check,github-pr-review,github-pr-check].
-          reporter: github-pr-review
-          # Change reporter level if you need.
-          # GitHub Status Check won't become failure with warning.
-          level: warning
+      - name: Run rails best practice with reviewdog
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bundle exec rails_best_practices --without-color --silent . | reviewdog -efm="%f:%l - %m" -efm="%-G%.%#" \
+              -name="rails_best_practices" \
+              -reporter="github-check" \
+              -filter-mode="added" \
+              -fail-on-error="false" \
+              -level="warning"
