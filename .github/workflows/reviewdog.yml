@@ -52,6 +52,6 @@ jobs:
           bundle exec rails_best_practices --without-color --silent . | reviewdog -efm="%f:%l - %m" -efm="%-G%.%#" \
               -name="rails_best_practices" \
               -reporter="github-pr-check" \
-              -filter-mode="nofilter" \
+              -filter-mode="diff_context" \
               -fail-on-error="true" \
               -level="info"
