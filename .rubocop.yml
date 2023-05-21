@@ -5,8 +5,19 @@ require:
 Style/Documentation:
   Enabled: false
 Metrics/MethodLength:
+  Max: 20
   Exclude:
     - 'db/migrate/*'
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/*'
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*.rb
+    - config/routes.rb
+Metrics/AbcSize:
+  Max: 32
+Layout/LineLength:
+  Exclude:
+    - config/initializers/devise.rb
+    - db/migrate/*.rb
