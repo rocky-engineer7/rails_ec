@@ -53,5 +53,5 @@ jobs:
               -name="rails_best_practices" \
               -reporter="github-pr-check" \
               -filter-mode="added" \
-              -fail-on-error="false" \
+              -fail-on-error="true" \
               -level="info"
