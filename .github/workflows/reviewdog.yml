@@ -34,7 +34,7 @@ jobs:
         run: |
           bundle exec rails_best_practices --without-color --silent . | reviewdog -efm="%f:%l - %m" -efm="%-G%.%#" \
               -name="rails_best_practices" \
-              -reporter="github-check" \
+              -reporter="github-pr-check" \
               -filter-mode="added" \
               -fail-on-error="false" \
-              -level="warning"
+              -level="info"
